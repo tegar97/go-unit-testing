@@ -16,7 +16,7 @@ func TestHelloWorld(t *testing.T) {
 }
 
 func TestHelloWorldTegar(t *testing.T) {
-	result := HelloWorld("Tegar")
+	result := HelloWorld("sa")
 	if result != "Hello Tegar" {
 		//error
 		t.Fatal("Error : Result Must Be Tegar")
