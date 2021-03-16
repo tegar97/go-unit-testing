@@ -3,6 +3,7 @@ package helper
 import (
 	"fmt"
 	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 	"runtime"
 	"testing"
 )
@@ -57,5 +58,17 @@ func TestSkip(t *testing.T) {
 
 	result := HelloWorld("World")
 	assert.Equal(t, "Hello s", result, "Result Must be 'Hello World'")
+
+}
+
+func TestSubTest(t *testing.T) {
+	t.Run("tegar", func(t *testing.T) {
+		result := HelloWorld("tegar")
+		require.Equal(t, "Hello Tegar", result, "Result must be 'Hello Tegar'")
+	})
+	t.Run("akmal", func(t *testing.T) {
+		result := HelloWorld("akmal")
+		require.Equal(t, "Hello Tegar", result, "Result must be 'Hello akmal'")
+	})
 
 }
